@@ -9,7 +9,7 @@ favourite your countries in no time.
 
 Before we start, you can take a look at the app:
 
-![Output sample](images/demo.gif)
+![Output sample](images/country_demo.gif)
 
 ## Key Features
 
