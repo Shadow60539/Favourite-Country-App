@@ -1,20 +1,20 @@
 
-[![support](https://img.shields.io/badge/plateform-flutter%7Candroid%20studio-9cf?style=plastic&logo=appveyor)](https://github.com/Shadow60539/spotilite)
+[![support](https://img.shields.io/badge/plateform-flutter%7Candroid%20studio-9cf?style=plastic&logo=appveyor)](https://github.com/Shadow60539/Favourite-Country-App)
 
 # Introduction
 
-> “Spotilite”
+> “Tatsam”
 is a small, simple and beautiful app,
-listen to your fav songs with no intruptions.
+favourite your countries in no time.
 
 Before we start, you can take a look at the app:
 
-![Output sample](images/Spotilite.gif)
+![Output sample](images/demo.gif)
 
 ## Key Features
 
-- [x] Listen tracks.
-- [x] Save liked tracks for easy accessablility.
+- [x] View All Countries.
+- [x] Save Favourite.
 - [x] Connectivity check every single second.
 
 
@@ -24,10 +24,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [F
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/Shadow60539/spotilite.git
+$ git clone https://github.com/Shadow60539/Favourite-Country-App.git
 
 # Go into the repository
-$ cd spotilite.git
+$ cd Favourite-Country-App.git
 
 # Install dependencies
 $ flutter packages get
