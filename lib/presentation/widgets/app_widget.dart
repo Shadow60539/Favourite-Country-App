@@ -5,10 +5,9 @@ import 'package:music_app/core/colors/colors.dart';
 import 'package:music_app/core/route/route.gr.dart';
 import 'package:music_app/core/utils/liked_provider.dart';
 import 'package:music_app/injection.dart';
+import 'package:music_app/presentation/bloc/country/country_bloc.dart';
 
 import 'package:music_app/presentation/bloc/liked/liked_bloc.dart';
-import 'package:music_app/presentation/bloc/single_track/single_track_bloc.dart';
-import 'package:music_app/presentation/bloc/track/track_bloc.dart';
 import 'package:provider/provider.dart';
 
 class AppWidget extends StatelessWidget {
@@ -18,17 +17,15 @@ class AppWidget extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (context) => getIt<LikedProvider>()),
           BlocProvider(
-            create: (context) =>
-                getIt<TrackBloc>()..add(const TrackEvent.fetchAllTracks()),
+            create: (context) => getIt<LikedBloc>()
+              ..add(const LikedEvent.fetchAllLikedCountries()),
           ),
           BlocProvider(
-            create: (context) =>
-                getIt<LikedBloc>()..add(const LikedEvent.fetchAllLikedSongs()),
-          ),
-          BlocProvider(create: (context) => getIt<SingleTrackBloc>()),
+              create: (context) => getIt<CountryBloc>()
+                ..add(const CountryEvent.fetchAllCountries())),
         ],
         child: MaterialApp(
-          title: 'Spotilite',
+          title: 'Tatsam',
           theme: ThemeData.dark().copyWith(
             textTheme: GoogleFonts.nunitoTextTheme().apply(
               bodyColor: kWhite,

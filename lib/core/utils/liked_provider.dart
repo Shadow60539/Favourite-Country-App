@@ -1,25 +1,25 @@
 import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
-import 'package:music_app/core/model/track.dart';
+import 'package:music_app/core/model/country.dart';
 
 @lazySingleton
 class LikedProvider extends ChangeNotifier {
-  List<Track> _likedTracksList = [];
-  List<Track> get likedTracksList => _likedTracksList;
+  List<Country> _likedTracksList = [];
+  List<Country> get likedTracksList => _likedTracksList;
 
-  void updateLikedTracksList({List<Track> newTrackList}) {
-    _likedTracksList = newTrackList;
+  void updateLikedTracksList({List<Country> newCountryList}) {
+    _likedTracksList = newCountryList;
     notifyListeners();
   }
 
-  void addLikedTracksList({Track track}) {
-    _likedTracksList.add(track);
+  void addLikedTracksList({Country country}) {
+    _likedTracksList.add(country);
     notifyListeners();
   }
 
-  void removeLikedTracksList({Track track}) {
+  void removeLikedTracksList({Country country}) {
     _likedTracksList
-        .removeWhere((element) => element.trackName == track.trackName);
+        .removeWhere((element) => element.countryCode == country.countryCode);
     notifyListeners();
   }
 }

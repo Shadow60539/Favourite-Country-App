@@ -2,41 +2,25 @@ import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 import 'package:http/http.dart';
-import 'package:music_app/core/model/lyrics.dart';
-import 'package:music_app/core/model/track.dart';
+import 'package:music_app/core/model/country.dart';
 import 'package:music_app/data/apis.dart';
 
 class TrackData {
-  static Future<Either<String, List<Track>>> getAllTracks() async {
-    final List<Track> _trackList = <Track>[];
-    final Response response = await get(kAllTracksApi);
-    if (jsonDecode(response.body)["message"]["header"]["status_code"] != 401) {
-      final data = jsonDecode(response.body)["message"]["body"]["track_list"];
-      data.forEach((track) {
-        _trackList.add(Track.fromJson(track['track'] as Map<String, dynamic>));
+  static Future<Either<String, List<Country>>> getAllContries() async {
+    final List<Country> _countries = <Country>[];
+    final Response response = await get(kAllCountriesApi);
+    if (jsonDecode(response.body)["status-code"] == 200) {
+      final data = jsonDecode(response.body)["data"] as Map<String, dynamic>;
+      data.forEach((k, v) {
+        _countries.add(Country(
+            countryCode: k,
+            countryName: v['country'] as String,
+            region: v['region'] as String));
       });
-      return right(_trackList);
+
+      return right(_countries);
     } else {
       return left('Error');
     }
-  }
-
-  static Future<Either<String, Track>> getSingleTrack({String trackId}) async {
-    final Response response = await get(kSingleTrackApi(trackId: trackId));
-
-    if (jsonDecode(response.body)["message"]["header"]["status_code"] == 401) {
-      return left('Error');
-    } else {
-      final data = jsonDecode(response.body)["message"]["body"]["track"];
-      return right(Track.fromJson(data as Map<String, dynamic>));
-    }
-  }
-
-  static Future<Lyrics> getSingleTrackLyrics({String trackId}) async {
-    final Response response =
-        await get(kSingleTrackLyricsApi(trackId: trackId));
-    final data = jsonDecode(response.body)["message"]["body"]["lyrics"];
-
-    return Lyrics.fromJson(data as Map<String, dynamic>);
   }
 }

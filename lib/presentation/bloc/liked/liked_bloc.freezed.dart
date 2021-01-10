@@ -14,18 +14,18 @@ class _$LikedEventTearOff {
   const _$LikedEventTearOff();
 
 // ignore: unused_element
-  _LikeSongEvent likeSong(
-      {String trackId, String trackName, String artistName}) {
-    return _LikeSongEvent(
-      trackId: trackId,
-      trackName: trackName,
-      artistName: artistName,
+  _LikeCountryEvent likeCountry(
+      {String countryCode, String countryName, String region}) {
+    return _LikeCountryEvent(
+      countryCode: countryCode,
+      countryName: countryName,
+      region: region,
     );
   }
 
 // ignore: unused_element
-  _AllLikeSongEvent fetchAllLikedSongs() {
-    return const _AllLikeSongEvent();
+  _AllLikeCountriesEvent fetchAllLikedCountries() {
+    return const _AllLikeCountriesEvent();
   }
 }
 
@@ -38,24 +38,25 @@ mixin _$LikedEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result likeSong(String trackId, String trackName, String artistName),
-    @required Result fetchAllLikedSongs(),
+        Result likeCountry(
+            String countryCode, String countryName, String region),
+    @required Result fetchAllLikedCountries(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result likeSong(String trackId, String trackName, String artistName),
-    Result fetchAllLikedSongs(),
+    Result likeCountry(String countryCode, String countryName, String region),
+    Result fetchAllLikedCountries(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result likeSong(_LikeSongEvent value),
-    @required Result fetchAllLikedSongs(_AllLikeSongEvent value),
+    @required Result likeCountry(_LikeCountryEvent value),
+    @required Result fetchAllLikedCountries(_AllLikeCountriesEvent value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result likeSong(_LikeSongEvent value),
-    Result fetchAllLikedSongs(_AllLikeSongEvent value),
+    Result likeCountry(_LikeCountryEvent value),
+    Result fetchAllLikedCountries(_AllLikeCountriesEvent value),
     @required Result orElse(),
   });
 }
@@ -77,102 +78,104 @@ class _$LikedEventCopyWithImpl<$Res> implements $LikedEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$LikeSongEventCopyWith<$Res> {
-  factory _$LikeSongEventCopyWith(
-          _LikeSongEvent value, $Res Function(_LikeSongEvent) then) =
-      __$LikeSongEventCopyWithImpl<$Res>;
-  $Res call({String trackId, String trackName, String artistName});
+abstract class _$LikeCountryEventCopyWith<$Res> {
+  factory _$LikeCountryEventCopyWith(
+          _LikeCountryEvent value, $Res Function(_LikeCountryEvent) then) =
+      __$LikeCountryEventCopyWithImpl<$Res>;
+  $Res call({String countryCode, String countryName, String region});
 }
 
 /// @nodoc
-class __$LikeSongEventCopyWithImpl<$Res> extends _$LikedEventCopyWithImpl<$Res>
-    implements _$LikeSongEventCopyWith<$Res> {
-  __$LikeSongEventCopyWithImpl(
-      _LikeSongEvent _value, $Res Function(_LikeSongEvent) _then)
-      : super(_value, (v) => _then(v as _LikeSongEvent));
+class __$LikeCountryEventCopyWithImpl<$Res>
+    extends _$LikedEventCopyWithImpl<$Res>
+    implements _$LikeCountryEventCopyWith<$Res> {
+  __$LikeCountryEventCopyWithImpl(
+      _LikeCountryEvent _value, $Res Function(_LikeCountryEvent) _then)
+      : super(_value, (v) => _then(v as _LikeCountryEvent));
 
   @override
-  _LikeSongEvent get _value => super._value as _LikeSongEvent;
+  _LikeCountryEvent get _value => super._value as _LikeCountryEvent;
 
   @override
   $Res call({
-    Object trackId = freezed,
-    Object trackName = freezed,
-    Object artistName = freezed,
+    Object countryCode = freezed,
+    Object countryName = freezed,
+    Object region = freezed,
   }) {
-    return _then(_LikeSongEvent(
-      trackId: trackId == freezed ? _value.trackId : trackId as String,
-      trackName: trackName == freezed ? _value.trackName : trackName as String,
-      artistName:
-          artistName == freezed ? _value.artistName : artistName as String,
+    return _then(_LikeCountryEvent(
+      countryCode:
+          countryCode == freezed ? _value.countryCode : countryCode as String,
+      countryName:
+          countryName == freezed ? _value.countryName : countryName as String,
+      region: region == freezed ? _value.region : region as String,
     ));
   }
 }
 
 /// @nodoc
-class _$_LikeSongEvent implements _LikeSongEvent {
-  const _$_LikeSongEvent({this.trackId, this.trackName, this.artistName});
+class _$_LikeCountryEvent implements _LikeCountryEvent {
+  const _$_LikeCountryEvent({this.countryCode, this.countryName, this.region});
 
   @override
-  final String trackId;
+  final String countryCode;
   @override
-  final String trackName;
+  final String countryName;
   @override
-  final String artistName;
+  final String region;
 
   @override
   String toString() {
-    return 'LikedEvent.likeSong(trackId: $trackId, trackName: $trackName, artistName: $artistName)';
+    return 'LikedEvent.likeCountry(countryCode: $countryCode, countryName: $countryName, region: $region)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LikeSongEvent &&
-            (identical(other.trackId, trackId) ||
+        (other is _LikeCountryEvent &&
+            (identical(other.countryCode, countryCode) ||
                 const DeepCollectionEquality()
-                    .equals(other.trackId, trackId)) &&
-            (identical(other.trackName, trackName) ||
+                    .equals(other.countryCode, countryCode)) &&
+            (identical(other.countryName, countryName) ||
                 const DeepCollectionEquality()
-                    .equals(other.trackName, trackName)) &&
-            (identical(other.artistName, artistName) ||
-                const DeepCollectionEquality()
-                    .equals(other.artistName, artistName)));
+                    .equals(other.countryName, countryName)) &&
+            (identical(other.region, region) ||
+                const DeepCollectionEquality().equals(other.region, region)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(trackId) ^
-      const DeepCollectionEquality().hash(trackName) ^
-      const DeepCollectionEquality().hash(artistName);
+      const DeepCollectionEquality().hash(countryCode) ^
+      const DeepCollectionEquality().hash(countryName) ^
+      const DeepCollectionEquality().hash(region);
 
   @override
-  _$LikeSongEventCopyWith<_LikeSongEvent> get copyWith =>
-      __$LikeSongEventCopyWithImpl<_LikeSongEvent>(this, _$identity);
+  _$LikeCountryEventCopyWith<_LikeCountryEvent> get copyWith =>
+      __$LikeCountryEventCopyWithImpl<_LikeCountryEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result likeSong(String trackId, String trackName, String artistName),
-    @required Result fetchAllLikedSongs(),
+        Result likeCountry(
+            String countryCode, String countryName, String region),
+    @required Result fetchAllLikedCountries(),
   }) {
-    assert(likeSong != null);
-    assert(fetchAllLikedSongs != null);
-    return likeSong(trackId, trackName, artistName);
+    assert(likeCountry != null);
+    assert(fetchAllLikedCountries != null);
+    return likeCountry(countryCode, countryName, region);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result likeSong(String trackId, String trackName, String artistName),
-    Result fetchAllLikedSongs(),
+    Result likeCountry(String countryCode, String countryName, String region),
+    Result fetchAllLikedCountries(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (likeSong != null) {
-      return likeSong(trackId, trackName, artistName);
+    if (likeCountry != null) {
+      return likeCountry(countryCode, countryName, region);
     }
     return orElse();
   }
@@ -180,70 +183,72 @@ class _$_LikeSongEvent implements _LikeSongEvent {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result likeSong(_LikeSongEvent value),
-    @required Result fetchAllLikedSongs(_AllLikeSongEvent value),
+    @required Result likeCountry(_LikeCountryEvent value),
+    @required Result fetchAllLikedCountries(_AllLikeCountriesEvent value),
   }) {
-    assert(likeSong != null);
-    assert(fetchAllLikedSongs != null);
-    return likeSong(this);
+    assert(likeCountry != null);
+    assert(fetchAllLikedCountries != null);
+    return likeCountry(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result likeSong(_LikeSongEvent value),
-    Result fetchAllLikedSongs(_AllLikeSongEvent value),
+    Result likeCountry(_LikeCountryEvent value),
+    Result fetchAllLikedCountries(_AllLikeCountriesEvent value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (likeSong != null) {
-      return likeSong(this);
+    if (likeCountry != null) {
+      return likeCountry(this);
     }
     return orElse();
   }
 }
 
-abstract class _LikeSongEvent implements LikedEvent {
-  const factory _LikeSongEvent(
-      {String trackId, String trackName, String artistName}) = _$_LikeSongEvent;
+abstract class _LikeCountryEvent implements LikedEvent {
+  const factory _LikeCountryEvent(
+      {String countryCode,
+      String countryName,
+      String region}) = _$_LikeCountryEvent;
 
-  String get trackId;
-  String get trackName;
-  String get artistName;
-  _$LikeSongEventCopyWith<_LikeSongEvent> get copyWith;
+  String get countryCode;
+  String get countryName;
+  String get region;
+  _$LikeCountryEventCopyWith<_LikeCountryEvent> get copyWith;
 }
 
 /// @nodoc
-abstract class _$AllLikeSongEventCopyWith<$Res> {
-  factory _$AllLikeSongEventCopyWith(
-          _AllLikeSongEvent value, $Res Function(_AllLikeSongEvent) then) =
-      __$AllLikeSongEventCopyWithImpl<$Res>;
+abstract class _$AllLikeCountriesEventCopyWith<$Res> {
+  factory _$AllLikeCountriesEventCopyWith(_AllLikeCountriesEvent value,
+          $Res Function(_AllLikeCountriesEvent) then) =
+      __$AllLikeCountriesEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$AllLikeSongEventCopyWithImpl<$Res>
+class __$AllLikeCountriesEventCopyWithImpl<$Res>
     extends _$LikedEventCopyWithImpl<$Res>
-    implements _$AllLikeSongEventCopyWith<$Res> {
-  __$AllLikeSongEventCopyWithImpl(
-      _AllLikeSongEvent _value, $Res Function(_AllLikeSongEvent) _then)
-      : super(_value, (v) => _then(v as _AllLikeSongEvent));
+    implements _$AllLikeCountriesEventCopyWith<$Res> {
+  __$AllLikeCountriesEventCopyWithImpl(_AllLikeCountriesEvent _value,
+      $Res Function(_AllLikeCountriesEvent) _then)
+      : super(_value, (v) => _then(v as _AllLikeCountriesEvent));
 
   @override
-  _AllLikeSongEvent get _value => super._value as _AllLikeSongEvent;
+  _AllLikeCountriesEvent get _value => super._value as _AllLikeCountriesEvent;
 }
 
 /// @nodoc
-class _$_AllLikeSongEvent implements _AllLikeSongEvent {
-  const _$_AllLikeSongEvent();
+class _$_AllLikeCountriesEvent implements _AllLikeCountriesEvent {
+  const _$_AllLikeCountriesEvent();
 
   @override
   String toString() {
-    return 'LikedEvent.fetchAllLikedSongs()';
+    return 'LikedEvent.fetchAllLikedCountries()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _AllLikeSongEvent);
+    return identical(this, other) || (other is _AllLikeCountriesEvent);
   }
 
   @override
@@ -253,24 +258,25 @@ class _$_AllLikeSongEvent implements _AllLikeSongEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result likeSong(String trackId, String trackName, String artistName),
-    @required Result fetchAllLikedSongs(),
+        Result likeCountry(
+            String countryCode, String countryName, String region),
+    @required Result fetchAllLikedCountries(),
   }) {
-    assert(likeSong != null);
-    assert(fetchAllLikedSongs != null);
-    return fetchAllLikedSongs();
+    assert(likeCountry != null);
+    assert(fetchAllLikedCountries != null);
+    return fetchAllLikedCountries();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result likeSong(String trackId, String trackName, String artistName),
-    Result fetchAllLikedSongs(),
+    Result likeCountry(String countryCode, String countryName, String region),
+    Result fetchAllLikedCountries(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (fetchAllLikedSongs != null) {
-      return fetchAllLikedSongs();
+    if (fetchAllLikedCountries != null) {
+      return fetchAllLikedCountries();
     }
     return orElse();
   }
@@ -278,31 +284,31 @@ class _$_AllLikeSongEvent implements _AllLikeSongEvent {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result likeSong(_LikeSongEvent value),
-    @required Result fetchAllLikedSongs(_AllLikeSongEvent value),
+    @required Result likeCountry(_LikeCountryEvent value),
+    @required Result fetchAllLikedCountries(_AllLikeCountriesEvent value),
   }) {
-    assert(likeSong != null);
-    assert(fetchAllLikedSongs != null);
-    return fetchAllLikedSongs(this);
+    assert(likeCountry != null);
+    assert(fetchAllLikedCountries != null);
+    return fetchAllLikedCountries(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result likeSong(_LikeSongEvent value),
-    Result fetchAllLikedSongs(_AllLikeSongEvent value),
+    Result likeCountry(_LikeCountryEvent value),
+    Result fetchAllLikedCountries(_AllLikeCountriesEvent value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (fetchAllLikedSongs != null) {
-      return fetchAllLikedSongs(this);
+    if (fetchAllLikedCountries != null) {
+      return fetchAllLikedCountries(this);
     }
     return orElse();
   }
 }
 
-abstract class _AllLikeSongEvent implements LikedEvent {
-  const factory _AllLikeSongEvent() = _$_AllLikeSongEvent;
+abstract class _AllLikeCountriesEvent implements LikedEvent {
+  const factory _AllLikeCountriesEvent() = _$_AllLikeCountriesEvent;
 }
 
 /// @nodoc
@@ -318,13 +324,6 @@ class _$LikedStateTearOff {
   _LoadingState loading() {
     return const _LoadingState();
   }
-
-// ignore: unused_element
-  _LikedTrackState likedSongs({List<Track> tracksList}) {
-    return _LikedTrackState(
-      tracksList: tracksList,
-    );
-  }
 }
 
 /// @nodoc
@@ -337,26 +336,22 @@ mixin _$LikedState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loading(),
-    @required Result likedSongs(List<Track> tracksList),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loading(),
-    Result likedSongs(List<Track> tracksList),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_InitialState value),
     @required Result loading(_LoadingState value),
-    @required Result likedSongs(_LikedTrackState value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_InitialState value),
     Result loading(_LoadingState value),
-    Result likedSongs(_LikedTrackState value),
     @required Result orElse(),
   });
 }
@@ -417,11 +412,9 @@ class _$_InitialState implements _InitialState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loading(),
-    @required Result likedSongs(List<Track> tracksList),
   }) {
     assert(initial != null);
     assert(loading != null);
-    assert(likedSongs != null);
     return initial();
   }
 
@@ -430,7 +423,6 @@ class _$_InitialState implements _InitialState {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loading(),
-    Result likedSongs(List<Track> tracksList),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -445,11 +437,9 @@ class _$_InitialState implements _InitialState {
   Result map<Result extends Object>({
     @required Result initial(_InitialState value),
     @required Result loading(_LoadingState value),
-    @required Result likedSongs(_LikedTrackState value),
   }) {
     assert(initial != null);
     assert(loading != null);
-    assert(likedSongs != null);
     return initial(this);
   }
 
@@ -458,7 +448,6 @@ class _$_InitialState implements _InitialState {
   Result maybeMap<Result extends Object>({
     Result initial(_InitialState value),
     Result loading(_LoadingState value),
-    Result likedSongs(_LikedTrackState value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -513,11 +502,9 @@ class _$_LoadingState implements _LoadingState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loading(),
-    @required Result likedSongs(List<Track> tracksList),
   }) {
     assert(initial != null);
     assert(loading != null);
-    assert(likedSongs != null);
     return loading();
   }
 
@@ -526,7 +513,6 @@ class _$_LoadingState implements _LoadingState {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loading(),
-    Result likedSongs(List<Track> tracksList),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -541,11 +527,9 @@ class _$_LoadingState implements _LoadingState {
   Result map<Result extends Object>({
     @required Result initial(_InitialState value),
     @required Result loading(_LoadingState value),
-    @required Result likedSongs(_LikedTrackState value),
   }) {
     assert(initial != null);
     assert(loading != null);
-    assert(likedSongs != null);
     return loading(this);
   }
 
@@ -554,7 +538,6 @@ class _$_LoadingState implements _LoadingState {
   Result maybeMap<Result extends Object>({
     Result initial(_InitialState value),
     Result loading(_LoadingState value),
-    Result likedSongs(_LikedTrackState value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -567,127 +550,4 @@ class _$_LoadingState implements _LoadingState {
 
 abstract class _LoadingState implements LikedState {
   const factory _LoadingState() = _$_LoadingState;
-}
-
-/// @nodoc
-abstract class _$LikedTrackStateCopyWith<$Res> {
-  factory _$LikedTrackStateCopyWith(
-          _LikedTrackState value, $Res Function(_LikedTrackState) then) =
-      __$LikedTrackStateCopyWithImpl<$Res>;
-  $Res call({List<Track> tracksList});
-}
-
-/// @nodoc
-class __$LikedTrackStateCopyWithImpl<$Res>
-    extends _$LikedStateCopyWithImpl<$Res>
-    implements _$LikedTrackStateCopyWith<$Res> {
-  __$LikedTrackStateCopyWithImpl(
-      _LikedTrackState _value, $Res Function(_LikedTrackState) _then)
-      : super(_value, (v) => _then(v as _LikedTrackState));
-
-  @override
-  _LikedTrackState get _value => super._value as _LikedTrackState;
-
-  @override
-  $Res call({
-    Object tracksList = freezed,
-  }) {
-    return _then(_LikedTrackState(
-      tracksList:
-          tracksList == freezed ? _value.tracksList : tracksList as List<Track>,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_LikedTrackState implements _LikedTrackState {
-  const _$_LikedTrackState({this.tracksList});
-
-  @override
-  final List<Track> tracksList;
-
-  @override
-  String toString() {
-    return 'LikedState.likedSongs(tracksList: $tracksList)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _LikedTrackState &&
-            (identical(other.tracksList, tracksList) ||
-                const DeepCollectionEquality()
-                    .equals(other.tracksList, tracksList)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tracksList);
-
-  @override
-  _$LikedTrackStateCopyWith<_LikedTrackState> get copyWith =>
-      __$LikedTrackStateCopyWithImpl<_LikedTrackState>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result likedSongs(List<Track> tracksList),
-  }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(likedSongs != null);
-    return likedSongs(tracksList);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result likedSongs(List<Track> tracksList),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (likedSongs != null) {
-      return likedSongs(tracksList);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_InitialState value),
-    @required Result loading(_LoadingState value),
-    @required Result likedSongs(_LikedTrackState value),
-  }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(likedSongs != null);
-    return likedSongs(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_InitialState value),
-    Result loading(_LoadingState value),
-    Result likedSongs(_LikedTrackState value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (likedSongs != null) {
-      return likedSongs(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _LikedTrackState implements LikedState {
-  const factory _LikedTrackState({List<Track> tracksList}) = _$_LikedTrackState;
-
-  List<Track> get tracksList;
-  _$LikedTrackStateCopyWith<_LikedTrackState> get copyWith;
 }
